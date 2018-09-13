@@ -1,0 +1,23 @@
+We want to use the Model/View paradigm in the new version of VimsBrowse to
+give us more flexibility in the way information is displayed so we can give
+the user additional ways to use the program.
+
+The Directory-Model will interact with the operating system directory system
+and will present information about the files and directories found in the
+Current-Directory so that the various views for this information can display
+it in the main GUI window.
+
+The main GUI window will show a Directory-List to allow the user to move
+around within the operating system directory structure.
+
+The main GUI window will show a File-Table including information from any FITS
+files found in the Current-Directory.  This table will contain configurable
+columns populated from the headers of the FITS files.  The user will be able
+to choose the keywords to be displayed by editing a flat file stored in their
+home directory in .fitsbrowse/fitsbrowse-keywords.  The table will allow
+sorting on any of the columns of the table.
+
+Image display will be done in a seperate window for each image clicked on
+with simple controls for zoom, stretch, cross section, and color table.
+
+The user will be able to examine the FITS Header for any image.

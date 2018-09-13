@@ -1,0 +1,44 @@
+Browser for FITS files on disk.
+These will be 2-D images
+X-Y cross section plots
+Header information display
+ROI statistics
+Image stretch - min/max - histogram equalization
+Use MatPlotLib for plots
+
+Configuration file
+	number of frames to show
+	plots to show
+	show header information
+	
+Show directory list, allow user to click on image to see it, perhaps
+also allow decent into subdirectories or switch to directory somewhere else.
+
+Simple Photometry?
+
+Data Structures and Objects:
+	the GUI is an object
+	the current directory is an object
+	each image file will be opened into an object
+	the region of interest will be an object
+	the settings/configuation will be an object
+	the timeline will be an object
+	the map of the heavens will be an object
+	
+3D display showing target PyQtGraph?
+	probably not, can't texture a sphere in PyQtGraph!
+	
+However, we can show a map of the heavens and plot the position of the target.
+There can be a timeline slider that will show the target on the map and show
+the images as the slider is moved back and forth.  We can look through the
+headers of all the images in the directory and then populate the timeline
+slider with indicators of the image times.
+
+So the user will see a list of images, they can click on any image and the
+target position will be displayed, the timeline slider will move to the proper
+time, and the image will be displayed in the main image window.
+
+The user can also slide the timeline slider and the target position will move
+around as they slide but I'm not sure we want to flash all the images as they
+slide by, that might be confusing.  More thought needed there.
+
