@@ -70,6 +70,7 @@ class ImageAnalyzer(QMainWindow):
 if __name__ == '__main__':
     app = QApplication(sys.argv)
 
+    # The main window.
     main = ImageAnalyzer()
     main.show()
 
