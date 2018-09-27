@@ -1,0 +1,5 @@
+# Compiled python modules.
+*.pyc
+
+# OS X
+*.DS_Store
