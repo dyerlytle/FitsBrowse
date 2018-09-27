@@ -23,8 +23,8 @@ from matplotlib.widgets import RectangleSelector
 import matplotlib.pyplot as plt
 import os
 from astropy.io import fits
-from astropy.visualization import (MinMaxInterval, SqrtStretch,
-                                   ImageNormalize)
+from astropy.visualization import (MinMaxInterval, SqrtStretch, SquaredStretch,
+                                   ImageNormalize, ZScaleInterval)
 
 class ImageDisplay(QMainWindow):
     '''
@@ -145,12 +145,16 @@ class ImageDisplay(QMainWindow):
             self.image_data = fits.getdata(disp_file, ext=0)
         
             # Normalise the data, stretch to Min/Max, and take the squareroot.
+#             self.norm = ImageNormalize(self.image_data,
+#                                        interval=MinMaxInterval(),
+#                                        stretch=SqrtStretch())
+            
+
             self.norm = ImageNormalize(self.image_data,
-                                       interval=MinMaxInterval(),
-                                       stretch=SqrtStretch())
+                      interval=ZScaleInterval(), stretch=SquaredStretch())
          
             # Plot image with "prism" color map and norm defined above.
-            self.axs.imshow(self.image_data, cmap='prism', norm=self.norm)
+            self.axs.imshow(self.image_data, cmap='gray', norm=self.norm)
          
         except Exception as e:
             print(e)
